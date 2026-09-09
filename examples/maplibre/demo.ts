@@ -1,7 +1,7 @@
 import * as maplibre from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { addTwilight as addMapLibre } from 'earthshade/maplibre';
+import { addTwilight as addMapLibre } from '@fdomf/earthshade/maplibre';
 import { container, fixed } from '../shared';
 import { style } from '../geography';
 

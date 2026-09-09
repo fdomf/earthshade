@@ -1,5 +1,5 @@
 {
-  "name": "earthshade",
+  "name": "@fdomf/earthshade",
   "version": "0.1.0",
   "description": "Local solar twilight and night overlays for MapLibre and Leaflet",
   "type": "module",
@@ -81,5 +81,9 @@
   "homepage": "https://github.com/fdomf/earthshade#readme",
   "bugs": {
     "url": "https://github.com/fdomf/earthshade/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

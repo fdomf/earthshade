@@ -33,15 +33,15 @@ try {
     if (name !== 'maplibre') assert.ok(!modules.includes('maplibre-gl'));
     if (name !== 'leaflet') assert.ok(!modules.includes('leaflet'));
     const imports = name === 'core' ? `
-      import { solarPosition, solarElevation, classifyTwilight } from 'earthshade';
-      import { TWILIGHT_BANDS } from 'earthshade/core';
-      import { renderTile } from 'earthshade/raster';
+      import { solarPosition, solarElevation, classifyTwilight } from '@fdomf/earthshade';
+      import { TWILIGHT_BANDS } from '@fdomf/earthshade/core';
+      import { renderTile } from '@fdomf/earthshade/raster';
       const sun = solarPosition(0);
       const band: string = classifyTwilight(solarElevation({ latitudeDeg: 0, longitudeDeg: 0 }, sun));
       const pixels: Uint8ClampedArray = renderTile({ x: 0, y: 0, z: 0 }, sun).data;
       void [band, pixels, TWILIGHT_BANDS];
     ` : `
-      import { addTwilight, type TwilightController } from 'earthshade/${name}';
+      import { addTwilight, type TwilightController } from '@fdomf/earthshade/${name}';
       import type { Map } from '${name === 'maplibre' ? 'maplibre-gl' : 'leaflet'}';
       export function attach(map: Map): TwilightController {
         const overlay = addTwilight(map, { time: new Date(), opacity: .5 });
@@ -64,12 +64,12 @@ try {
         import assert from 'node:assert/strict';
         assert.equal(typeof window, 'undefined');
         assert.equal(typeof document, 'undefined');
-        const {solarPosition} = await import('earthshade');
-        const {renderTile} = await import('earthshade/raster');
+        const {solarPosition} = await import('@fdomf/earthshade');
+        const {renderTile} = await import('@fdomf/earthshade/raster');
         assert.equal(renderTile({x:0,y:0,z:0},solarPosition(0)).data.length,262144);
       `], cwd);
     } else if (name === 'maplibre') {
-      run(process.execPath, ['--input-type=module', '-e', "await import('earthshade/maplibre')"], cwd);
+      run(process.execPath, ['--input-type=module', '-e', "await import('@fdomf/earthshade/maplibre')"], cwd);
     }
     console.log(`Packed ${name} consumer: declarations and peer isolation passed`);
   }

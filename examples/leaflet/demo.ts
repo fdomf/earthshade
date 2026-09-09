@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { addTwilight as addLeaflet } from 'earthshade/leaflet';
+import { addTwilight as addLeaflet } from '@fdomf/earthshade/leaflet';
 import { container, fixed } from '../shared';
 import { graticule } from '../geography';
 

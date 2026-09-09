@@ -1,6 +1,6 @@
 import './style.css';
-import { DEFAULT_PALETTE, type Palette } from 'earthshade/raster';
-import { TWILIGHT_BANDS, solarPosition } from 'earthshade/core';
+import { DEFAULT_PALETTE, type Palette } from '@fdomf/earthshade/raster';
+import { TWILIGHT_BANDS, solarPosition } from '@fdomf/earthshade/core';
 
 interface ExampleOverlay {
   setTime(time: Date | 'live'): void;

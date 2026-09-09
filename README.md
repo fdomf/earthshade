@@ -6,10 +6,10 @@ Earthshade combines a pure astronomy core, a Web Mercator RGBA renderer, and Map
 
 | Entry point | Purpose |
 | --- | --- |
-| `earthshade` or `earthshade/core` | Solar position, elevation, and twilight classification |
-| `earthshade/raster` | RGBA map tiles and configurable band colors |
-| `earthshade/maplibre` | Overlays for MapLibre GL JS |
-| `earthshade/leaflet` | Overlays for Leaflet |
+| `@fdomf/earthshade` or `@fdomf/earthshade/core` | Solar position, elevation, and twilight classification |
+| `@fdomf/earthshade/raster` | RGBA map tiles and configurable band colors |
+| `@fdomf/earthshade/maplibre` | Overlays for MapLibre GL JS |
+| `@fdomf/earthshade/leaflet` | Overlays for Leaflet |
 
 ## Run locally
 
@@ -28,7 +28,7 @@ To try it in another project, run `npm pack` and install the generated `.tgz` th
 ## MapLibre
 
 ```ts
-import { addTwilight } from "earthshade/maplibre";
+import { addTwilight } from "@fdomf/earthshade/maplibre";
 
 // `map` is an existing, loaded MapLibre map.
 const twilight = addTwilight(map, {
@@ -54,7 +54,7 @@ Use the same MapLibre module instance as the map. The examples explicitly bundle
 ## Leaflet
 
 ```ts
-import { addTwilight } from 'earthshade/leaflet';
+import { addTwilight } from '@fdomf/earthshade/leaflet';
 
 const twilight = addTwilight(map, { time: 'live', zIndex: 350 });
 twilight.setTime(Date.UTC(2026, 8, 9, 20));
@@ -66,8 +66,8 @@ Requires the standard `L.CRS.EPSG3857`. The default unique pane sits at z-index 
 ## Core and pixels
 
 ```ts
-import { solarPosition, solarElevation, classifyTwilight, TWILIGHT_BANDS } from 'earthshade/core';
-import { renderTile, DEFAULT_PALETTE } from 'earthshade/raster';
+import { solarPosition, solarElevation, classifyTwilight, TWILIGHT_BANDS } from '@fdomf/earthshade/core';
+import { renderTile, DEFAULT_PALETTE } from '@fdomf/earthshade/raster';
 
 const sun = solarPosition(Date.UTC(2026, 8, 9, 20));
 const elevation = solarElevation({ latitudeDeg: 41.4, longitudeDeg: 2.2 }, sun);
