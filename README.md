@@ -4,6 +4,16 @@ TypeScript library for locally calculated daylight, civil twilight, nautical twi
 
 Earthshade combines a pure astronomy core, a Web Mercator RGBA renderer, and MapLibre GL JS and Leaflet adapters. Core and raster need no browser globals, map engine, or runtime dependency. No sunlight API or tile service is used.
 
+![Earthshade's daylight, twilight, and night bands over satellite imagery in MapLibre](https://raw.githubusercontent.com/fdomf/earthshade/main/assets/earthshade-satellite.jpg)
+
+NASA Blue Marble satellite composite in MapLibre. Imagery provided by [NASA's Global Imagery Browse Services (GIBS)](https://nasa-gibs.github.io/gibs-api-docs/).
+
+![Earthshade's daylight, twilight, and night bands over standard OpenStreetMap tiles in Leaflet](https://raw.githubusercontent.com/fdomf/earthshade/main/assets/earthshade-openstreetmap.png)
+
+Standard OpenStreetMap tiles in Leaflet. Map data and cartography © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
+
+Both screenshots show the default palette with shading calculated for 21 June 2026 at 18:00 UTC. Basemap imagery is independent of the overlay time.
+
 | Entry point | Purpose |
 | --- | --- |
 | `@fdomf/earthshade` or `@fdomf/earthshade/core` | Solar position, elevation, and twilight classification |
