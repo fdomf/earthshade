@@ -19,7 +19,7 @@ try {
       const report = { name, version: browser.version(), cpu: cpus()[0]?.model, utc: new Date().toISOString(), startLoad,
         ...await page.evaluate(() => window.runBenchmark()), endLoad: loadavg() };
       reports.push(report);
-      console.log(JSON.stringify({ name, results: report.pixels.results.map(({ size, baseline, candidate, medianSpeedup }) => ({ size, baseline, candidate, medianSpeedup })), encoding: report.encoding }));
+      console.log(JSON.stringify({ name, results: report.pixels.results.map(({ size, baseline, candidate, medianSpeedup }) => ({ size, baseline, candidate, medianSpeedup })), imagePreparation: report.imagePreparation }));
     } finally { await browser.close(); }
   }
 } finally {

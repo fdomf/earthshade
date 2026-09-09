@@ -2,7 +2,7 @@ import * as maplibregl from 'maplibre-gl';
 import type { Map, RasterTileSource } from 'maplibre-gl';
 import { renderTile } from '../raster/index.js';
 import { controller, Runtime, type OverlayOptions, type TwilightController } from '../internal/controller.js';
-import { encode, instanceId, paint } from '../internal/canvas.js';
+import { instanceId, paint } from '../internal/canvas.js';
 
 export type { OverlayOptions, TwilightController, TimeMode } from '../internal/controller.js';
 export interface MapLibreOptions extends OverlayOptions {
@@ -121,11 +121,14 @@ export function addTwilight(map: Map, options: MapLibreOptions = {}): TwilightCo
         const canvas = doc.createElement('canvas');
         paint(canvas, pixels);
         check();
-        const data = await encode(canvas, check);
-        check();
+        // MapLibre accepts decoded images directly. Avoid a PNG/Blob round trip:
+        // WebKit can reject Blob reads between navigation start and pagehide.
+        const data = await doc.defaultView!.createImageBitmap(canvas);
+        try { check(); }
+        catch (error) { data.close(); throw error; }
         return { data };
       } catch (error) {
-        // An encoder can fail after cancellation; stale errors are cancellation too.
+        // Image creation can fail after cancellation; stale errors are cancellation too.
         check();
         if (error instanceof Error && error.name === 'AbortError') throw error;
         throw runtime.report(error);

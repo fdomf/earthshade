@@ -12,13 +12,13 @@ function fixture() {
   const sources = new Map();
   const layers = new Map();
   const events = new Map();
-  const encodes = [];
+  const bitmaps = [];
   const tileLoads = [];
   const doc = new EventTarget();
   doc.hidden = false;
+  doc.defaultView = { createImageBitmap: () => new Promise((resolve, reject) => bitmaps.push(result => result ? resolve(result) : reject(new Error('Bitmap creation failed')))) };
   doc.createElement = () => ({
     getContext: () => ({ createImageData: (w, h) => ({ data: new Uint8ClampedArray(w * h * 4) }), putImageData() {} }),
-    toBlob: callback => encodes.push(callback),
   });
   const map = {
     isStyleLoaded: () => true,
@@ -41,7 +41,7 @@ function fixture() {
     setLayoutProperty() {}, setPaintProperty() {},
   };
   const request = id => ({ url: sources.get(id).tiles[0].replace('{z}/{x}/{y}', '0/0/0') });
-  return { map, encodes, sources, layers, events, request, tileLoads };
+  return { map, bitmaps, sources, layers, events, request, tileLoads };
 }
 
 test('refresh and disposal abort overlapping source loads before they reach the protocol queue', async () => {
@@ -58,7 +58,7 @@ test('refresh and disposal abort overlapping source loads before they reach the 
   assert.equal(protocols.size, 0);
 });
 
-test('protocol cancellation before rendering, during encoding, after revision and disposal', async () => {
+test('protocol cancellation before rendering, during image creation, after revision and disposal', async () => {
   const f = fixture();
   const errors = [];
   const overlay = addTwilight(f.map, { time: 0, onError: error => errors.push(error) });
@@ -66,25 +66,28 @@ test('protocol cancellation before rendering, during encoding, after revision an
   const handler = protocols.get(id);
   const aborted = new AbortController(); aborted.abort();
   await assert.rejects(handler(f.request(id), aborted), { name: 'AbortError' });
-  assert.equal(f.encodes.length, 0);
+  assert.equal(f.bitmaps.length, 0);
   const controller = new AbortController();
   const pending = handler(f.request(id), controller);
-  assert.equal(f.encodes.length, 1);
+  assert.equal(f.bitmaps.length, 1);
   controller.abort();
-  let staleReads = 0;
-  f.encodes.shift()({ arrayBuffer() { staleReads++; return Promise.resolve(new ArrayBuffer(0)); } });
+  let closed = 0;
+  const bitmap = { close() { closed++; } };
+  f.bitmaps.shift()(bitmap);
   await assert.rejects(pending, { name: 'AbortError' });
-  assert.equal(staleReads, 0, 'cancelled encodes must not start reading their Blob');
+  assert.equal(closed, 1, 'cancelled requests must release the unused bitmap');
   const old = f.request(id);
   const revision = handler(old, new AbortController());
   overlay.refresh();
-  f.encodes.shift()(new Blob(['png']));
+  f.bitmaps.shift()(bitmap);
   await assert.rejects(revision, { name: 'AbortError' });
+  assert.equal(closed, 2);
   await assert.rejects(handler(old, new AbortController()), { name: 'AbortError' });
   const removed = handler(f.request(id), new AbortController());
   overlay.dispose();
-  f.encodes.shift()(null);
+  f.bitmaps.shift()(bitmap);
   await assert.rejects(removed, { name: 'AbortError' });
+  assert.equal(closed, 3);
   assert.equal(errors.length, 0);
   assert.equal(protocols.has(id), false);
   assert.equal(f.sources.size, 0);
@@ -92,7 +95,7 @@ test('protocol cancellation before rendering, during encoding, after revision an
   assert.ok([...f.events.values()].every(set => set.size === 0));
 });
 
-test('protocol validates URLs and reports failed encodes; attachment failure unwinds ownership', async () => {
+test('protocol validates URLs and reports failed bitmaps; attachment failure unwinds ownership', async () => {
   const f = fixture();
   const errors = [];
   const overlay = addTwilight(f.map, { time: 0, onError: error => errors.push(error.message) });
@@ -100,8 +103,8 @@ test('protocol validates URLs and reports failed encodes; attachment failure unw
   const handler = protocols.get(id);
   await assert.rejects(handler({ url: `${id}://0/0/0/0?bad=true` }, new AbortController()), /Invalid/);
   const failed = handler(f.request(id), new AbortController());
-  f.encodes.shift()(null);
-  await assert.rejects(failed, /encoding failed/);
+  f.bitmaps.shift()(null);
+  await assert.rejects(failed, /Bitmap creation failed/);
   assert.equal(errors.length, 2);
   overlay.dispose();
   f.map.addLayer = () => { throw new Error('attachment failure'); };
@@ -120,8 +123,9 @@ test('protocol snapshots and registrations are independent across maps', async (
   one.dispose();
   assert.ok(protocols.has(idB));
   const success = protocols.get(idB)(b.request(idB), new AbortController());
-  b.encodes.shift()(new Blob(['png']));
-  assert.equal(new TextDecoder().decode((await success).data), 'png');
+  const bitmap = { close() { assert.fail('successful bitmap ownership passes to MapLibre'); } };
+  b.bitmaps.shift()(bitmap);
+  assert.equal((await success).data, bitmap);
   two.dispose();
 });
 
