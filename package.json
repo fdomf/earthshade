@@ -1,7 +1,6 @@
 {
   "name": "earthshade",
   "version": "0.1.0",
-  "private": true,
   "description": "Local solar twilight and night overlays for MapLibre and Leaflet",
   "type": "module",
   "license": "MIT",
@@ -51,9 +50,9 @@
     "benchmark:browser": "npm run build && node scripts/benchmark-browser.mjs"
   },
   "peerDependencies": {
-    "maplibre-gl": "6.8.0",
+    "@types/leaflet": "^1.9.0",
     "leaflet": "1.9.4",
-    "@types/leaflet": "^1.9.0"
+    "maplibre-gl": "6.8.0"
   },
   "peerDependenciesMeta": {
     "maplibre-gl": {
