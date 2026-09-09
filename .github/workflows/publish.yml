@@ -1,0 +1,81 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Validate release metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      dist-tag: ${{ steps.metadata.outputs.dist-tag }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Check version and publication readiness
+        id: metadata
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync, appendFileSync } from 'node:fs';
+          const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+          const lock = JSON.parse(readFileSync('package-lock.json', 'utf8'));
+          assert.equal(process.env.RELEASE_TAG, `v${pkg.version}`, 'Release tag must be v<package version>');
+          assert.notEqual(pkg.version, '0.0.0', 'Choose a release version first');
+          assert.equal(lock.version, pkg.version, 'Update the lockfile version');
+          assert.equal(lock.packages[''].version, pkg.version, 'Update the lockfile root version');
+          assert.ok(!pkg.private, 'Remove private: true before publishing');
+          assert.ok(pkg.license && pkg.license !== 'UNLICENSED', 'Choose the package license before publishing');
+          assert.equal(pkg.version.includes('-'), process.env.PRERELEASE === 'true', 'Semver prereleases must be marked as prereleases on GitHub');
+          appendFileSync(process.env.GITHUB_OUTPUT, `dist-tag=${process.env.PRERELEASE === 'true' ? 'next' : 'latest'}\n`);
+          NODE
+
+  validate:
+    name: Validate release
+    needs: release
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    name: Publish validated tarball
+    needs: [release, validate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Install npm with trusted publishing support
+        run: npm install --global npm@11
+      - uses: actions/download-artifact@v4
+        with:
+          name: npm-package
+          path: ${{ runner.temp }}/npm-package
+      - name: Publish to npm using OIDC
+        env:
+          NPM_DIST_TAG: ${{ needs.release.outputs.dist-tag }}
+        run: npm publish "$RUNNER_TEMP/npm-package/package.tgz" --access public --provenance --ignore-scripts --tag "$NPM_DIST_TAG"

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Earthshade renderer benchmark</title>
+<p>Controlled renderer benchmark. Run with npm run benchmark:browser.</p>
+<script type="module">
+import { renderTile } from '/dist/raster/index.js';
+import { renderTile as baseline } from './baseline-renderer.mjs';
+import { compare, cases, summary } from './workload.mjs';
+window.runBenchmark = async () => {
+  const pixels = compare(baseline, renderTile);
+  const encoding = [];
+  for (const size of [256, 512]) {
+    const { request, sun } = cases(size)[0];
+    const tile = renderTile(request, sun);
+    const canvas = document.createElement('canvas'); canvas.width = canvas.height = size;
+    const context = canvas.getContext('2d');
+    const pixels = context.createImageData(size, size); pixels.data.set(tile.data);
+    const paint = [], png = [];
+    for (let i = 0; i < 40; i++) {
+      const start = performance.now(); context.putImageData(pixels, 0, 0);
+      const painted = performance.now();
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      if (!blob) throw new Error('PNG encoding failed');
+      await blob.arrayBuffer();
+      if (i >= 10) { paint.push(painted - start); png.push(performance.now() - painted); }
+    }
+    encoding.push({ size, samples: png.length, paint: summary(paint), pngAndArrayBuffer: summary(png) });
+  }
+  return { userAgent: navigator.userAgent, viewport: [innerWidth, innerHeight], dpr: devicePixelRatio, pixels, encoding };
+};
+</script></html>

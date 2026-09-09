@@ -1,0 +1,1008 @@
+{
+  "generated": "2026-09-09",
+  "units": "UTC ISO instants and degrees; east-positive longitude",
+  "noaa": {
+    "source": "https://gml.noaa.gov/grad/solcalc/main.js",
+    "sha256": "3832956f24724eafacf9e18173b9299b1554d6252bed0784d9c9aca6d9f54856",
+    "algorithm": "Meeus declination and equation of time",
+    "toleranceDeg": 1e-8
+  },
+  "independent": {
+    "source": "https://github.com/cosinekitty/astronomy/tree/master/source/js",
+    "version": "2.1.19",
+    "algorithm": "VSOP geocentric apparent Sun, equator of date and Greenwich apparent sidereal time",
+    "toleranceDeg": 0.03
+  },
+  "vectors": [
+    {
+      "utc": "1900-01-01T00:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.063112031166796,
+        "subsolarLongitudeDeg": -179.14365428200767
+      },
+      "independent": {
+        "declinationDeg": -23.063145002292075,
+        "subsolarLongitudeDeg": -179.14219132134303
+      }
+    },
+    {
+      "utc": "1900-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.1705914659387681,
+        "subsolarLongitudeDeg": 1.8397643765094926
+      },
+      "independent": {
+        "declinationDeg": 0.17017494478113493,
+        "subsolarLongitudeDeg": 1.845563876968356
+      }
+    },
+    {
+      "utc": "1900-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.45080847354991,
+        "subsolarLongitudeDeg": 0.3558606066394532
+      },
+      "independent": {
+        "declinationDeg": 23.450452253134607,
+        "subsolarLongitudeDeg": 0.3545534863849298
+      }
+    },
+    {
+      "utc": "1900-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.7828919310523055,
+        "subsolarLongitudeDeg": -1.7045852524369138
+      },
+      "independent": {
+        "declinationDeg": 0.7847693757899789,
+        "subsolarLongitudeDeg": -1.7161075653970101
+      }
+    },
+    {
+      "utc": "1900-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.448510789814602,
+        "subsolarLongitudeDeg": -0.4641145559673987
+      },
+      "independent": {
+        "declinationDeg": -23.448530092829518,
+        "subsolarLongitudeDeg": -0.4648204893062484
+      }
+    },
+    {
+      "utc": "1910-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -0.0002294214380255745,
+        "subsolarLongitudeDeg": 1.87004196721864
+      },
+      "independent": {
+        "declinationDeg": -0.0007895852679212646,
+        "subsolarLongitudeDeg": 1.8752918070968008
+      }
+    },
+    {
+      "utc": "1910-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.44999154699569,
+        "subsolarLongitudeDeg": 0.3388949220948234
+      },
+      "independent": {
+        "declinationDeg": 23.4496091689937,
+        "subsolarLongitudeDeg": 0.3389999667807615
+      }
+    },
+    {
+      "utc": "1910-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.9496660560086037,
+        "subsolarLongitudeDeg": -1.6658721118419635
+      },
+      "independent": {
+        "declinationDeg": 0.9491085941696173,
+        "subsolarLongitudeDeg": -1.6716358990890967
+      }
+    },
+    {
+      "utc": "1910-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.44681217615835,
+        "subsolarLongitudeDeg": -0.5226734711709469
+      },
+      "independent": {
+        "declinationDeg": -23.446822517471112,
+        "subsolarLongitudeDeg": -0.5272949861451934
+      }
+    },
+    {
+      "utc": "1920-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.23047979818230802,
+        "subsolarLongitudeDeg": 1.8250415570307723
+      },
+      "independent": {
+        "declinationDeg": 0.2306500356695912,
+        "subsolarLongitudeDeg": 1.832085797595596
+      }
+    },
+    {
+      "utc": "1920-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.447579075480924,
+        "subsolarLongitudeDeg": 0.3761182349089722
+      },
+      "independent": {
+        "declinationDeg": 23.447244989492784,
+        "subsolarLongitudeDeg": 0.37504033217896904
+      }
+    },
+    {
+      "utc": "1920-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.7212134204141547,
+        "subsolarLongitudeDeg": -1.7151947901039648
+      },
+      "independent": {
+        "declinationDeg": 0.7213913101033858,
+        "subsolarLongitudeDeg": -1.7226290731538256
+      }
+    },
+    {
+      "utc": "1920-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.445841318166416,
+        "subsolarLongitudeDeg": -0.45693930540812744
+      },
+      "independent": {
+        "declinationDeg": -23.445826966568738,
+        "subsolarLongitudeDeg": -0.45891150869522335
+      }
+    },
+    {
+      "utc": "1930-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.06068133067794678,
+        "subsolarLongitudeDeg": 1.8552408849357107
+      },
+      "independent": {
+        "declinationDeg": 0.05761724524458763,
+        "subsolarLongitudeDeg": 1.8547162520487745
+      }
+    },
+    {
+      "utc": "1930-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.449068772433325,
+        "subsolarLongitudeDeg": 0.35912717388725923
+      },
+      "independent": {
+        "declinationDeg": 23.448718328284038,
+        "subsolarLongitudeDeg": 0.35326180300671695
+      }
+    },
+    {
+      "utc": "1930-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.8867682744771462,
+        "subsolarLongitudeDeg": -1.6763972237625921
+      },
+      "independent": {
+        "declinationDeg": 0.8861986727140625,
+        "subsolarLongitudeDeg": -1.6820597349664013
+      }
+    },
+    {
+      "utc": "1930-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.446186319209357,
+        "subsolarLongitudeDeg": -0.5154742479226115
+      },
+      "independent": {
+        "declinationDeg": -23.446104285496716,
+        "subsolarLongitudeDeg": -0.5194076519775308
+      }
+    },
+    {
+      "utc": "1940-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.2900501076151885,
+        "subsolarLongitudeDeg": 1.8103049309740982
+      },
+      "independent": {
+        "declinationDeg": 0.2896408617865648,
+        "subsolarLongitudeDeg": 1.8158582302875175
+      }
+    },
+    {
+      "utc": "1940-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.444560288738757,
+        "subsolarLongitudeDeg": 0.3963584684345278
+      },
+      "independent": {
+        "declinationDeg": 23.444219266341516,
+        "subsolarLongitudeDeg": 0.399020120148748
+      }
+    },
+    {
+      "utc": "1940-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.6597958874024972,
+        "subsolarLongitudeDeg": -1.7257795075142894
+      },
+      "independent": {
+        "declinationDeg": 0.6610575802922886,
+        "subsolarLongitudeDeg": -1.735469063360938
+      }
+    },
+    {
+      "utc": "1940-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.443466923611464,
+        "subsolarLongitudeDeg": -0.4497585441949923
+      },
+      "independent": {
+        "declinationDeg": -23.44341366613791,
+        "subsolarLongitudeDeg": -0.4551016651569171
+      }
+    },
+    {
+      "utc": "1950-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.12181569201455436,
+        "subsolarLongitudeDeg": 1.84042498968347
+      },
+      "independent": {
+        "declinationDeg": 0.12208722528647177,
+        "subsolarLongitudeDeg": 1.8475665009489717
+      }
+    },
+    {
+      "utc": "1950-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.447472581239932,
+        "subsolarLongitudeDeg": 0.379349966431505
+      },
+      "independent": {
+        "declinationDeg": 23.447201238831685,
+        "subsolarLongitudeDeg": 0.38321601249776904
+      }
+    },
+    {
+      "utc": "1950-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.8236673206284095,
+        "subsolarLongitudeDeg": -1.686915366755784
+      },
+      "independent": {
+        "declinationDeg": 0.8225838341942461,
+        "subsolarLongitudeDeg": -1.6912363605342762
+      }
+    },
+    {
+      "utc": "1950-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.44487632161398,
+        "subsolarLongitudeDeg": -0.5082588649221407
+      },
+      "independent": {
+        "declinationDeg": -23.444742150666293,
+        "subsolarLongitudeDeg": -0.5154004716329155
+      }
+    },
+    {
+      "utc": "1960-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.34946302420021685,
+        "subsolarLongitudeDeg": 1.7955526236484047
+      },
+      "independent": {
+        "declinationDeg": 0.35035600575449355,
+        "subsolarLongitudeDeg": 1.8040710715153523
+      }
+    },
+    {
+      "utc": "1960-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.44188158441501,
+        "subsolarLongitudeDeg": 0.41658239087291804
+      },
+      "independent": {
+        "declinationDeg": 23.441594819044678,
+        "subsolarLongitudeDeg": 0.41622141573157023
+      }
+    },
+    {
+      "utc": "1960-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5984669590666234,
+        "subsolarLongitudeDeg": -1.7363392608058348
+      },
+      "independent": {
+        "declinationDeg": 0.5999698466118916,
+        "subsolarLongitudeDeg": -1.7464495674831824
+      }
+    },
+    {
+      "utc": "1960-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.44147872776758,
+        "subsolarLongitudeDeg": -0.44257113737774034
+      },
+      "independent": {
+        "declinationDeg": -23.441366999162092,
+        "subsolarLongitudeDeg": -0.4461699336411584
+      }
+    },
+    {
+      "utc": "1970-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.18299226787293313,
+        "subsolarLongitudeDeg": 1.8255964455062212
+      },
+      "independent": {
+        "declinationDeg": 0.18205022971688334,
+        "subsolarLongitudeDeg": 1.829795424001361
+      }
+    },
+    {
+      "utc": "1970-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.44512766945722,
+        "subsolarLongitudeDeg": 0.39956104639622936
+      },
+      "independent": {
+        "declinationDeg": 23.444848639009216,
+        "subsolarLongitudeDeg": 0.3957951007231486
+      }
+    },
+    {
+      "utc": "1970-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.7605518486381894,
+        "subsolarLongitudeDeg": -1.6974253710130824
+      },
+      "independent": {
+        "declinationDeg": 0.7619849830878234,
+        "subsolarLongitudeDeg": -1.7073167462127685
+      }
+    },
+    {
+      "utc": "1970-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.442847967464775,
+        "subsolarLongitudeDeg": -0.5010293494805182
+      },
+      "independent": {
+        "declinationDeg": -23.442749234847525,
+        "subsolarLongitudeDeg": -0.5041900357546183
+      }
+    },
+    {
+      "utc": "1980-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.4089106272628305,
+        "subsolarLongitudeDeg": 1.7807830696764313
+      },
+      "independent": {
+        "declinationDeg": 0.4088590527573699,
+        "subsolarLongitudeDeg": 1.7871175360457983
+      }
+    },
+    {
+      "utc": "1980-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.43955652658942,
+        "subsolarLongitudeDeg": 0.4367915333109522
+      },
+      "independent": {
+        "declinationDeg": 23.439369775478596,
+        "subsolarLongitudeDeg": 0.4341856746476651
+      }
+    },
+    {
+      "utc": "1980-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5370330983587874,
+        "subsolarLongitudeDeg": -1.746875597776807
+      },
+      "independent": {
+        "declinationDeg": 0.5372438541025693,
+        "subsolarLongitudeDeg": -1.7539503721376377
+      }
+    },
+    {
+      "utc": "1980-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.43984809841516,
+        "subsolarLongitudeDeg": -0.435375365823802
+      },
+      "independent": {
+        "declinationDeg": -23.439700733100445,
+        "subsolarLongitudeDeg": -0.43630166618515887
+      }
+    },
+    {
+      "utc": "1990-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.24401786550887786,
+        "subsolarLongitudeDeg": 1.8107571713055677
+      },
+      "independent": {
+        "declinationDeg": 0.24177198527325489,
+        "subsolarLongitudeDeg": 1.8118192997684446
+      }
+    },
+    {
+      "utc": "1990-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.442079443739303,
+        "subsolarLongitudeDeg": 0.41975762175252385
+      },
+      "independent": {
+        "declinationDeg": 23.441868608128594,
+        "subsolarLongitudeDeg": 0.42064781417320773
+      }
+    },
+    {
+      "utc": "1990-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.6976115096409791,
+        "subsolarLongitudeDeg": -1.7079242570492852
+      },
+      "independent": {
+        "declinationDeg": 0.6962214556775544,
+        "subsolarLongitudeDeg": -1.7111913521046063
+      }
+    },
+    {
+      "utc": "1990-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.440187147582087,
+        "subsolarLongitudeDeg": -0.49378845118121717
+      },
+      "independent": {
+        "declinationDeg": -23.440045213556267,
+        "subsolarLongitudeDeg": -0.49856432547539953
+      }
+    },
+    {
+      "utc": "2000-02-29T23:59:59.999Z",
+      "noaa": {
+        "declinationDeg": -7.549733969018372,
+        "subsolarLongitudeDeg": -176.90328253082828
+      },
+      "independent": {
+        "declinationDeg": -7.551191247087448,
+        "subsolarLongitudeDeg": -176.9079617059209
+      }
+    },
+    {
+      "utc": "2000-03-01T00:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -7.549733964593283,
+        "subsolarLongitudeDeg": -176.9032866980665
+      },
+      "independent": {
+        "declinationDeg": -7.551191242687129,
+        "subsolarLongitudeDeg": -176.9079658731472
+      }
+    },
+    {
+      "utc": "2000-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.4685745021041201,
+        "subsolarLongitudeDeg": 1.7659956614372732
+      },
+      "independent": {
+        "declinationDeg": 0.4674411807873412,
+        "subsolarLongitudeDeg": 1.7696639272545553
+      }
+    },
+    {
+      "utc": "2000-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.437479836952306,
+        "subsolarLongitudeDeg": 0.4569871207129381
+      },
+      "independent": {
+        "declinationDeg": 23.43734298731579,
+        "subsolarLongitudeDeg": 0.4539873738769984
+      }
+    },
+    {
+      "utc": "2000-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.4753218943896498,
+        "subsolarLongitudeDeg": -1.757391112325081
+      },
+      "independent": {
+        "declinationDeg": 0.4777953695542504,
+        "subsolarLongitudeDeg": -1.7695764342530538
+      }
+    },
+    {
+      "utc": "2000-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.438432852857424,
+        "subsolarLongitudeDeg": -0.4281696440855285
+      },
+      "independent": {
+        "declinationDeg": -23.43829135076816,
+        "subsolarLongitudeDeg": -0.4364937039609913
+      }
+    },
+    {
+      "utc": "2010-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.30472961252417136,
+        "subsolarLongitudeDeg": 1.7959082599452358
+      },
+      "independent": {
+        "declinationDeg": 0.30412885778129295,
+        "subsolarLongitudeDeg": 1.8006757970574085
+      }
+    },
+    {
+      "utc": "2010-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.438484156784963,
+        "subsolarLongitudeDeg": 0.4399371377742227
+      },
+      "independent": {
+        "declinationDeg": 23.43837288679567,
+        "subsolarLongitudeDeg": 0.4423166770673106
+      }
+    },
+    {
+      "utc": "2010-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.6349956156295861,
+        "subsolarLongitudeDeg": -1.7184080558172354
+      },
+      "independent": {
+        "declinationDeg": 0.6344643266537394,
+        "subsolarLongitudeDeg": -1.7236983935043781
+      }
+    },
+    {
+      "utc": "2010-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.437081189530804,
+        "subsolarLongitudeDeg": -0.48653885434487165
+      },
+      "independent": {
+        "declinationDeg": -23.436877225632692,
+        "subsolarLongitudeDeg": -0.4919974528875173
+      }
+    },
+    {
+      "utc": "2020-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5285860843779191,
+        "subsolarLongitudeDeg": 1.7511911803169369
+      },
+      "independent": {
+        "declinationDeg": 0.52966904807973,
+        "subsolarLongitudeDeg": 1.7596992532227773
+      }
+    },
+    {
+      "utc": "2020-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.435450271558746,
+        "subsolarLongitudeDeg": 0.4771694098463968
+      },
+      "independent": {
+        "declinationDeg": 23.43531852387614,
+        "subsolarLongitudeDeg": 0.47710547727899666
+      }
+    },
+    {
+      "utc": "2020-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.41321975054539134,
+        "subsolarLongitudeDeg": -1.7678886040225734
+      },
+      "independent": {
+        "declinationDeg": 0.4137630414335967,
+        "subsolarLongitudeDeg": -1.7755255259164642
+      }
+    },
+    {
+      "utc": "2020-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.437008108386326,
+        "subsolarLongitudeDeg": -0.42095316480845213
+      },
+      "independent": {
+        "declinationDeg": -23.436844180813413,
+        "subsolarLongitudeDeg": -0.4246521778169381
+      }
+    },
+    {
+      "utc": "2024-02-29T12:34:56.789Z",
+      "noaa": {
+        "declinationDeg": -7.661722315916957,
+        "subsolarLongitudeDeg": -5.633850357121219
+      },
+      "independent": {
+        "declinationDeg": -7.663306350243966,
+        "subsolarLongitudeDeg": -5.639121630924365
+      }
+    },
+    {
+      "utc": "2026-09-09T20:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 5.0725185964847865,
+        "subsolarLongitudeDeg": -120.69164735905042
+      },
+      "independent": {
+        "declinationDeg": 5.072280184798078,
+        "subsolarLongitudeDeg": -120.69614599233597
+      }
+    },
+    {
+      "utc": "2030-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.3650304297773623,
+        "subsolarLongitudeDeg": 1.7810496121431925
+      },
+      "independent": {
+        "declinationDeg": 0.3643866734171547,
+        "subsolarLongitudeDeg": 1.785515118639296
+      }
+    },
+    {
+      "utc": "2030-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.434574940115656,
+        "subsolarLongitudeDeg": 0.4600979451845433
+      },
+      "independent": {
+        "declinationDeg": 23.434509163064313,
+        "subsolarLongitudeDeg": 0.4595070487456496
+      }
+    },
+    {
+      "utc": "2030-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5727806513876575,
+        "subsolarLongitudeDeg": -1.7288727867253328
+      },
+      "independent": {
+        "declinationDeg": 0.5746739488909098,
+        "subsolarLongitudeDeg": -1.73974448216768
+      }
+    },
+    {
+      "utc": "2030-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.43377814942496,
+        "subsolarLongitudeDeg": -0.4792824767478123
+      },
+      "independent": {
+        "declinationDeg": -23.43354962110416,
+        "subsolarLongitudeDeg": -0.48499906473614374
+      }
+    },
+    {
+      "utc": "2040-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.588997915357366,
+        "subsolarLongitudeDeg": 1.7363718688438894
+      },
+      "independent": {
+        "declinationDeg": 0.5895502128019374,
+        "subsolarLongitudeDeg": 1.7434737919917325
+      }
+    },
+    {
+      "utc": "2040-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.433214349500272,
+        "subsolarLongitudeDeg": 0.49733732051322477
+      },
+      "independent": {
+        "declinationDeg": 23.433149521947314,
+        "subsolarLongitudeDeg": 0.49343591357205696
+      }
+    },
+    {
+      "utc": "2040-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.35069676629334934,
+        "subsolarLongitudeDeg": -1.7783702706965414
+      },
+      "independent": {
+        "declinationDeg": 0.3523889524326038,
+        "subsolarLongitudeDeg": -1.788691198172046
+      }
+    },
+    {
+      "utc": "2040-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.43531509493309,
+        "subsolarLongitudeDeg": -0.41372628059957606
+      },
+      "independent": {
+        "declinationDeg": -23.43505431433055,
+        "subsolarLongitudeDeg": -0.4179753589179427
+      }
+    },
+    {
+      "utc": "2050-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.4249101064139276,
+        "subsolarLongitudeDeg": 1.7661799076923899
+      },
+      "independent": {
+        "declinationDeg": 0.42293184677594037,
+        "subsolarLongitudeDeg": 1.7672655762331715
+      }
+    },
+    {
+      "utc": "2050-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.43061113244102,
+        "subsolarLongitudeDeg": 0.48023966465632384
+      },
+      "independent": {
+        "declinationDeg": 23.430531544643245,
+        "subsolarLongitudeDeg": 0.47868351551016985
+      }
+    },
+    {
+      "utc": "2050-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5109537254688745,
+        "subsolarLongitudeDeg": -1.7393153424832235
+      },
+      "independent": {
+        "declinationDeg": 0.5100540336516608,
+        "subsolarLongitudeDeg": -1.7436370792800062
+      }
+    },
+    {
+      "utc": "2050-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.430532922466725,
+        "subsolarLongitudeDeg": -0.4720200471560929
+      },
+      "independent": {
+        "declinationDeg": -23.43027920256636,
+        "subsolarLongitudeDeg": -0.47485022241573915
+      }
+    },
+    {
+      "utc": "2060-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.6497720786924442,
+        "subsolarLongitudeDeg": 1.7215410918773841
+      },
+      "independent": {
+        "declinationDeg": 0.6479114155813824,
+        "subsolarLongitudeDeg": 1.7229435158925526
+      }
+    },
+    {
+      "utc": "2060-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.430521445108607,
+        "subsolarLongitudeDeg": 0.5174884807289573
+      },
+      "independent": {
+        "declinationDeg": 23.43051720751658,
+        "subsolarLongitudeDeg": 0.512445689856122
+      }
+    },
+    {
+      "utc": "2060-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.2878133735183082,
+        "subsolarLongitudeDeg": -1.7888371382827017
+      },
+      "independent": {
+        "declinationDeg": 0.2887013199215838,
+        "subsolarLongitudeDeg": -1.7973344461419174
+      }
+    },
+    {
+      "utc": "2060-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.433117342856246,
+        "subsolarLongitudeDeg": -0.40649051105674516
+      },
+      "independent": {
+        "declinationDeg": -23.432776257359365,
+        "subsolarLongitudeDeg": -0.41033027757464424
+      }
+    },
+    {
+      "utc": "2070-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.4844473983618339,
+        "subsolarLongitudeDeg": 1.7512969463660966
+      },
+      "independent": {
+        "declinationDeg": 0.4845230405796126,
+        "subsolarLongitudeDeg": 1.7569265524207935
+      }
+    },
+    {
+      "utc": "2070-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.42682192968189,
+        "subsolarLongitudeDeg": 0.5003631409811078
+      },
+      "independent": {
+        "declinationDeg": 23.42673470868774,
+        "subsolarLongitudeDeg": 0.5071495978577332
+      }
+    },
+    {
+      "utc": "2070-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.44941554135847567,
+        "subsolarLongitudeDeg": -1.7497340705886018
+      },
+      "independent": {
+        "declinationDeg": 0.4493266584304186,
+        "subsolarLongitudeDeg": -1.755888477550684
+      }
+    },
+    {
+      "utc": "2070-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.427551885103856,
+        "subsolarLongitudeDeg": -0.464751069440581
+      },
+      "independent": {
+        "declinationDeg": -23.4272091399017,
+        "subsolarLongitudeDeg": -0.47375068010103405
+      }
+    },
+    {
+      "utc": "2080-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.710788368312234,
+        "subsolarLongitudeDeg": 1.706702644211191
+      },
+      "independent": {
+        "declinationDeg": 0.7127390035290296,
+        "subsolarLongitudeDeg": 1.7166726578035991
+      }
+    },
+    {
+      "utc": "2080-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.427178276309753,
+        "subsolarLongitudeDeg": 0.5376196903739583
+      },
+      "independent": {
+        "declinationDeg": 23.427138699056524,
+        "subsolarLongitudeDeg": 0.5382622783214401
+      }
+    },
+    {
+      "utc": "2080-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.2247072496025634,
+        "subsolarLongitudeDeg": -1.7992888581862871
+      },
+      "independent": {
+        "declinationDeg": 0.22591036202890516,
+        "subsolarLongitudeDeg": -1.8084022848654513
+      }
+    },
+    {
+      "utc": "2080-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.43025204445924,
+        "subsolarLongitudeDeg": -0.3992481702055102
+      },
+      "independent": {
+        "declinationDeg": -23.429903994890648,
+        "subsolarLongitudeDeg": -0.4054491211355753
+      }
+    },
+    {
+      "utc": "2090-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.543792729978011,
+        "subsolarLongitudeDeg": 1.7363982882802702
+      },
+      "independent": {
+        "declinationDeg": 0.542899015251774,
+        "subsolarLongitudeDeg": 1.7397009188216543
+      }
+    },
+    {
+      "utc": "2090-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.423356603221567,
+        "subsolarLongitudeDeg": 0.5204699982193688
+      },
+      "independent": {
+        "declinationDeg": 23.42336928765256,
+        "subsolarLongitudeDeg": 0.5188534751230236
+      }
+    },
+    {
+      "utc": "2090-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.38800220080867165,
+        "subsolarLongitudeDeg": -1.7601289316623934
+      },
+      "independent": {
+        "declinationDeg": 0.38871917677030143,
+        "subsolarLongitudeDeg": -1.768169436307744
+      }
+    },
+    {
+      "utc": "2090-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.42494808610719,
+        "subsolarLongitudeDeg": -0.4574741695892044
+      },
+      "independent": {
+        "declinationDeg": -23.42453273102724,
+        "subsolarLongitudeDeg": -0.4597598079483305
+      }
+    },
+    {
+      "utc": "2100-03-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.3769215125665461,
+        "subsolarLongitudeDeg": 1.7658246884467417
+      },
+      "independent": {
+        "declinationDeg": 0.37810402830619133,
+        "subsolarLongitudeDeg": 1.7736837065859845
+      }
+    },
+    {
+      "utc": "2100-06-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 23.428405474017485,
+        "subsolarLongitudeDeg": 0.50330945946871
+      },
+      "independent": {
+        "declinationDeg": 23.42838254511173,
+        "subsolarLongitudeDeg": 0.5022503721370413
+      }
+    },
+    {
+      "utc": "2100-09-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": 0.5500851792308146,
+        "subsolarLongitudeDeg": -1.7207465381821976
+      },
+      "independent": {
+        "declinationDeg": 0.5505270755626623,
+        "subsolarLongitudeDeg": -1.728072058842372
+      }
+    },
+    {
+      "utc": "2100-12-21T12:00:00.000Z",
+      "noaa": {
+        "declinationDeg": -23.427997261202016,
+        "subsolarLongitudeDeg": -0.5156149230247138
+      },
+      "independent": {
+        "declinationDeg": -23.42761262025913,
+        "subsolarLongitudeDeg": -0.5148302296993279
+      }
+    },
+    {
+      "utc": "2100-12-31T23:59:59.999Z",
+      "noaa": {
+        "declinationDeg": -23.024273717308226,
+        "subsolarLongitudeDeg": -179.2342442877889
+      },
+      "independent": {
+        "declinationDeg": -23.023433990687792,
+        "subsolarLongitudeDeg": -179.22809680916316
+      }
+    }
+  ]
+}

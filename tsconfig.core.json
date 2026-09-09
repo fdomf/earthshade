@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "lib": ["ES2022"], "noEmit": true, "skipLibCheck": false },
+  "include": ["src/index.ts", "src/core/**/*.ts", "src/raster/**/*.ts"]
+}

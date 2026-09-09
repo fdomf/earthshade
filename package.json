@@ -1,0 +1,86 @@
+{
+  "name": "earthshade",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local solar twilight and night overlays for MapLibre and Leaflet",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./raster": {
+      "types": "./dist/raster/index.d.ts",
+      "import": "./dist/raster/index.js"
+    },
+    "./maplibre": {
+      "types": "./dist/maplibre/index.d.ts",
+      "import": "./dist/maplibre/index.js"
+    },
+    "./leaflet": {
+      "types": "./dist/leaflet/index.d.ts",
+      "import": "./dist/leaflet/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.core.json",
+    "test": "npm run build && node --test --experimental-test-module-mocks --experimental-test-isolation=none tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "test:package": "npm run build && node scripts/test-package.mjs",
+    "test:examples": "node scripts/test-examples.mjs",
+    "build:examples": "npm run build && tsc -p tsconfig.examples.json && vite build",
+    "dev": "vite --host 127.0.0.1",
+    "benchmark": "npm run build && node scripts/benchmark.mjs",
+    "prepack": "npm run build",
+    "test:soak": "playwright test -c playwright.soak.config.mjs",
+    "profile:renderer": "npm run build && node --cpu-prof --cpu-prof-dir=/tmp scripts/profile-renderer.mjs",
+    "benchmark:browser": "npm run build && node scripts/benchmark-browser.mjs"
+  },
+  "peerDependencies": {
+    "maplibre-gl": "6.8.0",
+    "leaflet": "1.9.4",
+    "@types/leaflet": "^1.9.0"
+  },
+  "peerDependenciesMeta": {
+    "maplibre-gl": {
+      "optional": true
+    },
+    "leaflet": {
+      "optional": true
+    },
+    "@types/leaflet": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/leaflet": "^1.9.0",
+    "leaflet": "1.9.4",
+    "maplibre-gl": "6.8.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.3.0"
+  },
+  "author": "fdomf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdomf/earthshade.git"
+  },
+  "homepage": "https://github.com/fdomf/earthshade#readme",
+  "bugs": {
+    "url": "https://github.com/fdomf/earthshade/issues"
+  }
+}
