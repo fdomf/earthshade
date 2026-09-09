@@ -21,6 +21,44 @@ Both screenshots show the default palette with shading calculated for 21 June 20
 | `@fdomf/earthshade/maplibre` | Overlays for MapLibre GL JS |
 | `@fdomf/earthshade/leaflet` | Overlays for Leaflet |
 
+## Installation
+
+Install Earthshade from npm:
+
+```sh
+npm install @fdomf/earthshade
+```
+
+For map overlays, also install your chosen engine.
+
+**MapLibre:**
+
+```sh
+npm install maplibre-gl@6.8.0
+```
+
+Import its stylesheet in your application:
+
+```ts
+import 'maplibre-gl/dist/maplibre-gl.css';
+```
+
+**Leaflet:**
+
+```sh
+npm install leaflet@1.9.4
+```
+
+For TypeScript projects, also install `npm install --save-dev @types/leaflet@^1.9.0`.
+
+Import its stylesheet in your application:
+
+```ts
+import 'leaflet/dist/leaflet.css';
+```
+
+The core and raster entry points work without either map engine.
+
 ## Run locally
 
 Use Node 22.22 or newer for development.
@@ -32,8 +70,6 @@ npm run dev
 ```
 
 Open [the comparison example](http://127.0.0.1:5173/examples/comparison/), [MapLibre](http://127.0.0.1:5173/examples/maplibre/), or [Leaflet](http://127.0.0.1:5173/examples/leaflet/). Examples use local synthetic graticules with interactive markers, UTC time selection, live mode, whole-overlay and individual band visibility, and opacity controls. MapLibre also has a globe toggle. Open the HTTP links through Vite; opening the HTML directly as a `file://` URL cannot load the TypeScript modules.
-
-To try it in another project, run `npm pack` and install the generated `.tgz` there. Install only your chosen engine: `maplibre-gl@6.8.0` or `leaflet@1.9.4` (plus `@types/leaflet` for TypeScript). Include that engine's CSS in your application.
 
 ## MapLibre
 
